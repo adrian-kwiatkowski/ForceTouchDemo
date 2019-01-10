@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var pushLabel: UIView! {
+    var is3DTouchAvailable: Bool {
+        return view.traitCollection.forceTouchCapability == .available
+    }
+    
+    @IBOutlet weak var redButtonView: UIView! {
         didSet {
-            pushLabel.layer.cornerRadius = 50.0
+            redButtonView.layer.cornerRadius = 50.0
         }
     }
     
@@ -22,36 +26,22 @@ class ViewController: UIViewController {
         }
     }
     
-    var is3DTouchAvailable: Bool {
-        return view.traitCollection.forceTouchCapability == .available
-        
-        // for future: https://krakendev.io/force-touch-recognizers/
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if ( traitCollection.forceTouchCapability == .available) {
-//            registerForPreviewing(with: self as! UIViewControllerPreviewingDelegate, sourceView: view)
+        if is3DTouchAvailable {
             strengthLabel.text = "Push the button!"
+            let forceTouchGestureRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch(_:)))
+            redButtonView.addGestureRecognizer(forceTouchGestureRecognizer)
         } else {
             strengthLabel.text = "Force touch is not available \non this device."
         }
     }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        if let touch = touches.first {
-            guard is3DTouchAvailable, pushLabel.frame.contains(touch.location(in: view)) else { return }
-            
-            let normalizedForce = (touch.force / touch.maximumPossibleForce)
-            strengthLabel.text = String(format: "%.2f", normalizedForce)
+    
+    @objc func handleForceTouch(_ recognizer: ForceTouchGestureRecognizer) {
+        if let force = recognizer.force {
+            strengthLabel.text = String(format: "%.2f", force)
         }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        strengthLabel.text = "0.00"
-    }
-
 }
 

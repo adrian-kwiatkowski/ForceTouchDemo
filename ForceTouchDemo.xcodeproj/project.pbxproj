@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15392B5621E7E5E4000A5A91 /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15392B5521E7E5E4000A5A91 /* ForceTouchGestureRecognizer.swift */; };
 		59E685DC21CBB0CA0027A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E685DB21CBB0CA0027A03B /* AppDelegate.swift */; };
 		59E685DE21CBB0CA0027A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E685DD21CBB0CA0027A03B /* ViewController.swift */; };
 		59E685E121CBB0CA0027A03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E685DF21CBB0CA0027A03B /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15392B5521E7E5E4000A5A91 /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 		59E685D821CBB0CA0027A03B /* ForceTouchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForceTouchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E685DB21CBB0CA0027A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E685DD21CBB0CA0027A03B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +56,9 @@
 		59E685DA21CBB0CA0027A03B /* ForceTouchDemo */ = {
 			isa = PBXGroup;
 			children = (
-				59E685DB21CBB0CA0027A03B /* AppDelegate.swift */,
 				59E685DD21CBB0CA0027A03B /* ViewController.swift */,
+				15392B5521E7E5E4000A5A91 /* ForceTouchGestureRecognizer.swift */,
+				59E685DB21CBB0CA0027A03B /* AppDelegate.swift */,
 				59E685DF21CBB0CA0027A03B /* Main.storyboard */,
 				59E685E221CBB0CB0027A03B /* Assets.xcassets */,
 				59E685E421CBB0CB0027A03B /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59E685DE21CBB0CA0027A03B /* ViewController.swift in Sources */,
+				15392B5621E7E5E4000A5A91 /* ForceTouchGestureRecognizer.swift in Sources */,
 				59E685DC21CBB0CA0027A03B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
