@@ -24,11 +24,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zs-re-10F">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DuD-7e-YV9"/>
-                                    <constraint firstAttribute="width" constant="100" id="Y1k-m2-b9E"/>
+                                    <constraint firstAttribute="height" constant="200" id="DuD-7e-YV9"/>
+                                    <constraint firstAttribute="width" constant="200" id="Y1k-m2-b9E"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -44,7 +44,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="redButtonView" destination="1zs-re-10F" id="SL2-wW-1kX"/>
+                        <outlet property="buttonView" destination="1zs-re-10F" id="SL2-wW-1kX"/>
                         <outlet property="strengthLabel" destination="LpT-Q6-RNf" id="yd1-8Y-gN1"/>
                     </connections>
                 </viewController>

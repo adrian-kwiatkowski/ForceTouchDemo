@@ -14,9 +14,10 @@ class ViewController: UIViewController {
         return view.traitCollection.forceTouchCapability == .available
     }
     
-    @IBOutlet weak var redButtonView: UIView! {
+    @IBOutlet weak var buttonView: UIView! {
         didSet {
-            redButtonView.layer.cornerRadius = 50.0
+            buttonView.layer.cornerRadius = 100.0
+            buttonView.backgroundColor = UIColor.green
         }
     }
     
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
         if is3DTouchAvailable {
             strengthLabel.text = "Push the button!"
             let forceTouchGestureRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch(_:)))
-            redButtonView.addGestureRecognizer(forceTouchGestureRecognizer)
+            buttonView.addGestureRecognizer(forceTouchGestureRecognizer)
         } else {
             strengthLabel.text = "Force touch is not available \non this device."
         }
@@ -41,6 +42,8 @@ class ViewController: UIViewController {
     @objc func handleForceTouch(_ recognizer: ForceTouchGestureRecognizer) {
         if let force = recognizer.force {
             strengthLabel.text = String(format: "%.2f", force)
+            
+            buttonView.backgroundColor = UIColor(red: force * 2, green: (1.0 - force) * 2, blue: 0.0, alpha: 1.0)
         }
     }
 }
